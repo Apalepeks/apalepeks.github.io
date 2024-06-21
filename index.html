@@ -26,33 +26,44 @@
 
 #SHUT THE FUK UP
 
-#<!DOCTYPE html>
-#<html lang="en">
-#<head>
- # <meta charset="UTF-8">
-  #<meta name="viewport" content="width=device-width, initial-scale=1.0">
-  #<title>Index Page</title>
- # <style>
-  #  .button {
-   #   display: inline-block;
-      padding: 10px 20px;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .button-container {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+    .typewriter-button {
+      font-family: 'Courier New', Courier, monospace;
       font-size: 16px;
-      color: white;
-      background-color: #007BFF;
-      border: none;
+      color: #ffffff;
+      background-color: #333333;
+      padding: 10px 20px;
+      border: 2px solid #000000;
       border-radius: 5px;
-      text-align: center;
       text-decoration: none;
       transition: background-color 0.3s;
     }
-
-   # .button:hover {
-    #  background-color: #0056b3;
+    .typewriter-button:hover {
+      background-color: #555555;
     }
   </style>
-#</head>
-#<body>
- # <h1>Welcome to My Website</h1>
- # <a href="portfolio.html" class="button">Go to Portfolio</a>
-#</body>
-#</html>
+</head>
+<body>
+  <div class="button-container">
+    <a href="portfolio.html" class="typewriter-button">Portfolio</a>
+  </div>
+  <h1>Welcome to My Website</h1>
+  <!-- Other content here -->
+</body>
+</html>
