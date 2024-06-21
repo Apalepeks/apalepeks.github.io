@@ -1,49 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio Page</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
-    .header {
-      background-color: #333;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    .content {
-      padding: 20px;
-    }
-    .back-button {
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 16px;
-      color: #ffffff;
-      background-color: #333333;
-      padding: 10px 20px;
-      border: 2px solid #000000;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background-color 0.3s;
-    }
-    .back-button:hover {
-      background-color: #555555;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            margin: 20px 0;
+        }
+        header h1 {
+            font-size: 2em;
+            margin: 0;
+        }
+        section {
+            width: 80%;
+            max-width: 800px;
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        footer {
+            margin: 20px 0;
+            font-size: 0.8em;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-  <div class="header">
-    <h1>My Portfolio</h1>
-  </div>
-  <div class="content">
-    <p>Welcome to my portfolio page. Here you can find my projects and work.</p>
-    <!-- Add your portfolio content here -->
-    <a href="index.html" class="back-button">Back to Home</a>
-  </div>
-</body>
-</html>
+    <header>
+        <h1>John Doe</h1>
+        <p>Minimalistic Portfolio</p>
+    </header>
+
+    <section>
+        <h2>About Me</h2>
+        <p>Hello! I'm John Doe, a web developer with a passion for creating clean and minimalistic web designs. I love coding and bringing ideas to life through technology.</p>
+    </section>
+
+    <section>
+        <h2>Pr
