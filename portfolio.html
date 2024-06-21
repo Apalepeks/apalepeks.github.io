@@ -3,58 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Minimalistic Portfolio</title>
     <style>
         body {
             font-family: 'Courier New', Courier, monospace;
             background-color: #f4f4f4;
             color: #333;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
+            height: 100vh;
             margin: 0;
             padding: 0;
         }
-        header {
-            margin: 20px 0;
+        .container {
+            text-align: center;
         }
-        header h1 {
-            font-size: 2em;
-            margin: 0;
-        }
-        section {
-            width: 80%;
-            max-width: 800px;
-            margin: 20px 0;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #fff;
-        }
-        footer {
-            margin: 20px 0;
-            font-size: 0.8em;
-        }
-        a {
+        .container a {
+            display: block;
+            margin: 10px 0;
             color: #0066cc;
             text-decoration: none;
         }
-        a:hover {
+        .container a:hover {
             text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>John Doe</h1>
-        <p>Minimalistic Portfolio</p>
-    </header>
-
-    <section>
-        <h2>About Me</h2>
-        <p>Hello! I'm John Doe, a web developer with a passion for creating clean and minimalistic web designs. I love coding and bringing ideas to life through technology.</p>
-    </section>
-
-    <section>
-        <h2>Pr
+    <div class="container">
+        <h1>Minimalistic Portfolio</h1>
+        <a href="bio.html">Bio</a>
+        <a href="music.html">Music</a>
+        <a href="contact.html">@@@</a>
+    </div>
+</body>
+</html>
