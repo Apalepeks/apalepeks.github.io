@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Absolutely Insane Random Walk Drawing</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+</head>
+<body>
+  <script>
+    let particles = [];
+    let numParticles = 100;
+    let colors = ['#FF355E', '#FF6037', '#FFD700', '#7FFF00', '#50BFE6']; // Array of random colors
+
+    function setup() {
+      createCanvas(windowWidth, windowHeight);
+      background(0); // Black background
+      noStroke();
+
+      // Initialize particles with random positions and velocities
+      for (let i = 0; i < numParticles; i++) {
+        particles.push({
+          x: random(width),
+          y: random(height),
+          speedX: random(-5, 5),
+          speedY: random(-5, 5),
+          color: random(colors),
+          size: random(5, 20)
+        });
+      }
+    }
+
+    function draw() {
+      // Move and display each particle
+      for (let particle of particles) {
+        // Update position
+        particle.x += particle.speedX;
+        particle.y += particle.speedY;
+
+        // Bounce off edges
+        if (particle.x < 0 || particle.x > width) {
+          particle.speedX *= -1;
+        }
+        if (particle.y < 0 || particle.y > height) {
+          particle.speedY *= -1;
+        }
+
+        // Draw random shapes at current position
+        fill(particle.color);
+        let shapeType = floor(random(3));
+        if (shapeType === 0) {
+          ellipse(particle.x, particle.y, particle.size, particle.size); // Random circles
+        } else if (shapeType === 1) {
+          rect(particle.x, particle.y, particle.size, particle.size); // Random squares
+        } else {
+          triangle(particle.x, particle.y, particle.x + particle.size, particle.y, particle.x + particle.size / 2, particle.y - particle.size); // Random triangles
+        }
+      }
+
+      // Add chaotic lines
+      for (let i = 0; i < 10; i++) {
+        let x1 = random(width);
+        let y1 = random(height);
+        let x2 = random(width);
+        let y2 = random(height);
+        let randomColor = random(colors);
+        stroke(randomColor);
+        line(x1, y1, x2, y2);
+      }
+
+      // Add flashing effect
+      if (random() > 0.95) {
+        blendMode(DIFFERENCE);
+        fill(255);
+        rect(0, 0, width, height);
+        blendMode(BLEND);
+      }
+    }
+
+    function windowResized() {
+      resizeCanvas(windowWidth, windowHeight);
+      background(0);
+      particles = [];
+      // Reinitialize particles with random positions and velocities
+      for (let i = 0; i < numParticles; i++) {
+        particles.push({
+          x: random(width),
+          y: random(height),
+          speedX: random(-5, 5),
+          speedY: random(-5, 5),
+          color: random(colors),
+          size: random(5, 20)
+        });
+      }
+    }
+  </script>
+</body>
+</html>
