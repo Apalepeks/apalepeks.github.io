@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abstract 3D World</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene>
+        <!-- Abstract Shape 1: Twisted Box -->
+        <a-entity rotation="0 45 0">
+            <a-box position="-1 0.5 -3" width="0.5" height="0.5" depth="0.5" color="#FF5733"
+                   material="shader: flat;"></a-box>
+            <a-box position="1 0.5 -3" width="0.5" height="0.5" depth="0.5" color="#FF5733"
+                   material="shader: flat;"></a-box>
+        </a-entity>
+
+        <!-- Abstract Shape 2: Intersecting Spheres -->
+        <a-entity>
+            <a-sphere position="0 1.25 -5" radius="1.25" color="#900C3F" material="opacity: 0.7;"></a-sphere>
+            <a-sphere position="0 1.25 -5" radius="1.25" color="#FFC300" material="opacity: 0.3;"></a-sphere>
+        </a-entity>
+
+        <!-- Abstract Shape 3: Cylinders Ring -->
+        <a-entity rotation="0 0 45">
+            <a-cylinder position="1 0.75 -3" radius="0.1" height="1.5" color="#DAF7A6"></a-cylinder>
+            <a-cylinder position="1.5 0.75 -3.5" radius="0.1" height="1.5" color="#DAF7A6"></a-cylinder>
+            <a-cylinder position="2 0.75 -4" radius="0.1" height="1.5" color="#DAF7A6"></a-cylinder>
+            <a-cylinder position="2.5 0.75 -4.5" radius="0.1" height="1.5" color="#DAF7A6"></a-cylinder>
+        </a-entity>
+
+        <!-- Ground Plane -->
+        <a-plane position="0 0 -4" rotation="-90 0 0" width="20" height="20" color="#333333"></a-plane>
+        
+        <!-- Sky -->
+        <a-sky color="#222222"></a-sky>
+    </a-scene>
+</body>
+</html>
