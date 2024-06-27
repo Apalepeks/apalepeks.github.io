@@ -48,6 +48,17 @@
             function (gltf) {
                 model = gltf.scene;
                 scene.add(model);
+
+  // Optionally, set up environment map
+                const envMap = new THREE.TextureLoader().load('path_to_your_environment_map.jpg');
+                model.traverse((child) => {
+                    if (child.isMesh) {
+                        child.material.envMap = envMap;
+                    }
+                });
+
+
+                
                 render();
             },
             undefined,
