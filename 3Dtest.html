@@ -27,12 +27,12 @@
         document.body.appendChild(renderer.domElement);
 
         // Add a light
-        const light = new THREE.AmbientLight(0x504040,59); // soft white light
+        const light = new THREE.AmbientLight(0x504040,209); // soft white light
         scene.add(light);
 
 
         //some more light stuff yes
- const directionalLight = new THREE.DirectionalLight(0xffffff, 51);
+ const directionalLight = new THREE.DirectionalLight(0xffffff, 151);
         directionalLight.position.set(5, 5, 5).normalize();
         scene.add(directionalLight);
 
@@ -49,7 +49,7 @@
                 model = gltf.scene;
                 scene.add(model);
 
-  // Optionally, set up environment map
+  // Optionally, set up environment map (this can be deleted if needed untill render vietai)
                 const envMap = new THREE.TextureLoader().load('path_to_your_environment_map.jpg');
                 model.traverse((child) => {
                     if (child.isMesh) {
