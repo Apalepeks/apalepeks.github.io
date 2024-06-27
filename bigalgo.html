@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Absolutely Insane Random Walker</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: black;
+    }
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    let x, y;
+    let centerX, centerY;
+    let angle = 0;
+    let speedMultiplier = 5;
+    let colors = ['#FF355E', '#FF6037', '#FFD700', '#7FFF00', '#50BFE6'];
+
+    function setup() {
+      createCanvas(windowWidth, windowHeight);
+      centerX = width / 2;
+      centerY = height / 2;
+      x = centerX;
+      y = centerY;
+      background(0);
+      strokeWeight(3);
+    }
+
+    function draw() {
+      let t = frameCount / 600;
+
+      let targetX = centerX + 200 * cos(angle + TWO_PI * t);
+      let targetY = centerY + 200 * sin(angle + TWO_PI * t);
+
+      x += random(-3, 3) * speedMultiplier + (targetX - x) * 0.01;
+      y += random(-3, 3) * speedMultiplier + (targetY - y) * 0.01;
+
+      let randomColor = random(colors);
+      stroke(randomColor);
+      line(pmouseX, pmouseY, x, y);
+
+      if (random() > 0.95) {
+        blendMode(DIFFERENCE);
+        fill(255);
+        rect(0, 0, width, height);
+        blendMode(BLEND);
+      }
+
+      angle += 0.02;
+
+      if (x < 0 || x > width || y < 0 || y > height) {
+        x = centerX;
+        y = centerY;
+        background(0);
+      }
+    }
+
+    function windowResized() {
+      resizeCanvas(windowWidth, windowHeight);
+      centerX = width / 2;
+      centerY = height / 2;
+      x = centerX;
+      y = centerY;
+      background(0);
+    }
+  </script>
+</body>
+</html>
