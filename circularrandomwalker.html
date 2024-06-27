@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Walker with Circular Return</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+</head>
+<body>
+  <script>
+    let x, y;
+    let centerX, centerY;
+    let totalTime = 5 * 60 * 1000; // 5 minutes in milliseconds
+    let startTime;
+    let angle = 0;
+
+    function setup() {
+      createCanvas(800, 600);
+      background(255);
+      centerX = width / 2;
+      centerY = height / 2;
+      x = centerX;
+      y = centerY;
+      stroke(0);
+      strokeWeight(2);
+      startTime = millis();
+    }
+
+    function draw() {
+      let currentTime = millis();
+      let elapsedTime = currentTime - startTime;
+      let t = elapsedTime / totalTime; // Normalized time (0 to 1)
+
+      // Calculate the target position based on the angle and normalized time
+      let targetX = centerX + 100 * cos(angle + TWO_PI * t);
+      let targetY = centerY + 100 * sin(angle + TWO_PI * t);
+
+      // Move randomly but gradually towards the target position
+      x += random(-1, 1) + (targetX - x) * 0.01;
+      y += random(-1, 1) + (targetY - y) * 0.01;
+
+      // Draw the current position
+      point(x, y);
+
+      // If the total time has passed, stop the walker
+      if (elapsedTime >= totalTime) {
+        noLoop();
+      }
+    }
+  </script>
+</body>
+</html>
