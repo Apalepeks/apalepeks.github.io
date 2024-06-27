@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A-Frame Blender Model Viewer</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+</head>
+<body>
+    <a-scene keyboard-shortcuts vr-mode-ui>
+        <!-- Ambient light -->
+        <a-light type="ambient" color="#888"></a-light>
+
+        <!-- Directional light for sunlight -->
+        <a-light type="directional" intensity="0.5" position="1 1 0"></a-light>
+
+        <!-- Load the Blender model -->
+        <a-entity gltf-model="url(bigsculpture.glb)" position="0 0 -5" scale="1 1 1"></a-entity>
+
+        <!-- Ground plane (optional) -->
+        <a-plane rotation="-90 0 0" width="100" height="100" color="#7BC8A4"></a-plane>
+
+        <!-- Camera with movement controls -->
+        <a-entity camera look-controls wasd-controls position="0 1.6 0"></a-entity>
+    </a-scene>
+</body>
+</html>
